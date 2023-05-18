@@ -9,6 +9,7 @@
 body {
   width: 100%;
   background-color: lightseagreen;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
 
 header {
@@ -24,13 +25,19 @@ header {
   padding: 30px;
 }
 
-.restart {
+.restart,
+.check {
   padding: 10px 15px;
-  color: #000000;
-  background-color: white;
+  color: #ffffff;
+  background-color: rgb(171, 171, 171);
   font-size: 20px;
   font-weight: 600;
   border: none;
+}
+
+.restart:hover,
+.check:hover {
+  cursor: pointer;
 }
 
 header .topHeader p {
@@ -40,9 +47,10 @@ header .topHeader p {
 }
 
 header h1 {
-  font-size: 45px;
+  font-size: 35px;
   text-align: center;
   margin: 20px 0 80px 0;
+  color: rgb(244, 232, 8);
 }
 
 main {
@@ -68,26 +76,30 @@ main {
 
 .mainGame {
   width: 100%;
-  height: auto;
+  /* height: auto; */
   /* background-color: white; */
   display: flex;
+  flex-direction: column;
+  align-items: center;
   padding: 20px 0;
   margin-top: 30px;
 }
 .mainGameLeft,
 .mainGameRight {
-  width: 50%;
-  height: 100%;
+  /* width: 50%; */
+  /* height: 100%; */
   display: flex;
   flex-direction: column;
+  /* width: 60%; */
+  padding: 10px;
 }
 .mainGameLeft {
   align-items: center;
 }
-.mainGameRight {
+/* .mainGameRight {
   /* background-color: blueviolet; */
-  padding: 10px 0;
-}
+/* padding: 10px 0; */
+/* }  */
 
 .givenNumber {
   width: 160px;
@@ -96,39 +108,31 @@ main {
   background-color: lightseagreen;
   border: 5px solid white;
   outline: none;
+  font-size: 40px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  text-align: center;
 }
 
 .check {
-  background-color: white;
-  border: none;
-  font-size: 25px;
-  padding: 10px 20px;
+  margin-bottom: 40px;
 }
 
 .numberInfo,
-.scoreBox,
-.highscoreBox {
+.score,
+.highscoreP {
   color: white;
 
   font-weight: 600;
-  white-space: nowrap;
+  /* white-space: nowrap; */
 }
 .numberInfo {
   margin-bottom: 20px;
   font-size: 22px;
 }
-.scoreBox,
-.highscoreBox {
-  display: flex;
-  margin: 5px 0;
-}
-.scoreBox p,
-.highscoreBox p {
-  font-size: 26px;
-}
 .score,
-.highscore {
-  margin-left: 10px;
+.highscoreP {
+  font-size: 26px;
+  margin: 5px 0;
 }
 
 .between,
@@ -138,14 +142,25 @@ h1,
   cursor: default;
 }
 
+@media only screen and (min-width: 450px) {
+  .mainGame {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0 50px;
+  }
+  .check {
+    margin-bottom: 0;
+  }
+}
+
 @media only screen and (min-width: 800px) {
   .topHeader {
     justify-content: space-around;
   }
+  .mainGame {
+    padding: 0 150px;
+  }
 }
 
 @media only screen and (min-width: 1100px) {
-  .mainGameRight {
-    padding: 0 0 0 150px;
-  }
 }
